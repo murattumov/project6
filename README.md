@@ -1,17 +1,17 @@
-# Проект 4.  Сегментирование клиентов онлайн-магазина подарков
+# Проект 6.  Сегментирование клиентов онлайн-магазина подарков
 
 ## Оглавление
-[1. Описание проекта](https://github.com/murattumov/project4/blob/master/README.md#Описание-проекта)
+[1. Описание проекта](https://github.com/murattumov/project6/blob/master/README.md#Описание-проекта)
 
-[2. Какой кейс решаем?](https://github.com/murattumov/project4/blob/master/README.md#Какой-кейс-решаем)
+[2. Какой кейс решаем?](https://github.com/murattumov/project6/blob/master/README.md#Какой-кейс-решаем)
 
-[3. Краткая информация о данных](https://github.com/murattumov/project4/blob/master/README.md#Краткая-информация-о-данных)
+[3. Краткая информация о данных](https://github.com/murattumov/project6/blob/master/README.md#Краткая-информация-о-данных)
 
-[4. Этапы работы над проектом](https://github.com/murattumov/project4/blob/master/README.md#Этапы-работы-над-проектом)
+[4. Этапы работы над проектом](https://github.com/murattumov/project6/blob/master/README.md#Этапы-работы-над-проектом)
 
-[5. Результат](https://github.com/murattumov/project4/blob/master/README.md#Результат)
+[5. Результат](https://github.com/murattumov/project6/blob/master/README.md#Результат)
 
-[6. Краткая информация](https://github.com/murattumov/project4/blob/master/README.md#Краткая-информация)
+[6. Краткая информация](https://github.com/murattumov/project6/blob/master/README.md#Краткая-информация)
 
 ### **Описание проекта**
 
@@ -57,17 +57,17 @@
   1. добавляем в датасет общую цену заказа, назовём её TotalPrice.
   2. добавляем в таблицу с транзакциями признаки месяца, даты, дня недели и часа совершения покупки.
   3. график, отражающий количество уникальных клиентов в каждой из стран
-  ![](https://github.com/murattumov/project1/blob/master/plotly/pr6_1.png)
+  ![](https://github.com/murattumov/project6/blob/master/plotly/pr6_1.png)
   4. график, отражающий количество поступающих заказов по каждой стране
-  ![](https://github.com/murattumov/project1/blob/master/plotly/pr6_2.png)
+  ![](https://github.com/murattumov/project6/blob/master/plotly/pr6_2.png)
   5. график распределения выручки по странам
-  ![](https://github.com/murattumov/project1/blob/master/plotly/pr6_3.png)
+  ![](https://github.com/murattumov/project6/blob/master/plotly/pr6_3.png)
   6. график, отражающий распределение суммарной выручки от заказов по месяцам.
-  ![](https://github.com/murattumov/project1/blob/master/plotly/pr6_4.png)
+  ![](https://github.com/murattumov/project6/blob/master/plotly/pr6_4.png)
   7. график, отражающий распределение среднего количества заказов по дням недели.
-  ![](https://github.com/murattumov/project1/blob/master/plotly/pr6_5.png)
+  ![](https://github.com/murattumov/project6/blob/master/plotly/pr6_5.png)
   8. график, отражающий распределение среднего количества ежедневно поступающих заказов по времени суток (часу совершения транзакции).
-  ![](https://github.com/murattumov/project1/blob/master/plotly/pr6_6.png) 
+  ![](https://github.com/murattumov/project6/blob/master/plotly/pr6_6.png) 
   
 
 - RFM-сегментация клиентов. Часть I
@@ -77,21 +77,21 @@
   Monetary Value - рассчитывается как общая сумма денег, которую клиент потратил на наши товары (с учетом возвратов).
   2. Удаление из RFM-таблицы записей о клиентах, для признаков Frequency и Monetary квантили которых больше уровня 0.95.
   3. визуализацию нашего трёхмерного пространства признаков.
-  ![](https://github.com/murattumov/project1/blob/master/plotly/pr6_7.png) 
+  ![](https://github.com/murattumov/project6/blob/master/plotly/pr6_7.png) 
   4. Создаем pipeline, в котором будут следующие шаги:
     - стандартизация с помощью StandardScaler с параметрами по умолчанию;
     - метод главных компонент с двумя компонентами.
   Визуализация пространства главных компонент после декомпозиции.
-  ![](https://github.com/murattumov/project1/blob/master/plotly/pr6_8.png)
+  ![](https://github.com/murattumov/project6/blob/master/plotly/pr6_8.png)
   5. с помощью коэффициента силуэта подбираем оптимальное количество кластеров для метода k-means.
-  ![](https://github.com/murattumov/project1/blob/master/plotly/pr6_9.png)
+  ![](https://github.com/murattumov/project6/blob/master/plotly/pr6_9.png)
   6. с помощью коэффициента силуэта подбираем оптимальное количество кластеров для метода GaussianMixture.
-  ![](https://github.com/murattumov/project1/blob/master/plotly/pr6_10.png)
+  ![](https://github.com/murattumov/project6/blob/master/plotly/pr6_10.png)
   7. выбрав модель с максимальным значением коэффициента силуэта 0.52 обучаем лучшую модель с количеством кластеров, равным 3.
   Визуализация.
-  ![](https://github.com/murattumov/project1/blob/master/plotly/pr6_11.png)
+  ![](https://github.com/murattumov/project6/blob/master/plotly/pr6_11.png)
   8. составляем профили кластеров. использование полярной диаграммы.
-  ![](https://github.com/murattumov/project1/blob/master/plotly/pr6_12.png)
+  ![](https://github.com/murattumov/project6/blob/master/plotly/pr6_12.png)
   
 
 - RFM-сегментация клиентов. Часть II
@@ -100,18 +100,18 @@
     - стандартизация с помощью StandardScaler с параметрами по умолчанию;
     - алгоритм t-SNE с двумя компонентами, параметрами perplexity=50 и random_state=100.
   Визуализация.
-  ![](https://github.com/murattumov/project1/blob/master/plotly/pr6_13.png)
+  ![](https://github.com/murattumov/project6/blob/master/plotly/pr6_13.png)
   2. с помощью коэффициента силуэта подбираем оптимальное количество кластеров для метода k-means, перебирая возможные значения от 3 до 8 включительно.
-  ![](https://github.com/murattumov/project1/blob/master/plotly/pr6_14.png)
+  ![](https://github.com/murattumov/project6/blob/master/plotly/pr6_14.png)
   3. с помощью коэффициента силуэта подбираем оптимальное количество кластеров для метода GaussianMixture, перебирая возможные значения от 3 до 8 включительно..
-  ![](https://github.com/murattumov/project1/blob/master/plotly/pr6_15.png)
+  ![](https://github.com/murattumov/project6/blob/master/plotly/pr6_15.png)
   4. с помощью коэффициента силуэта подбираем оптимальное количество кластеров для метода алгомеративной кластеризации (AgglomerativeClustering), перебирая возможные значения от 3 до 8 включительно..
-  ![](https://github.com/murattumov/project1/blob/master/plotly/pr6_16.png)
+  ![](https://github.com/murattumov/project6/blob/master/plotly/pr6_16.png)
   5. выбрав модель с максимальным значением коэффициента силуэта 0.48 обучаем KMeans как лучшую модель с количеством кластеров, равным 7.
   Визуализация.
-  ![](https://github.com/murattumov/project1/blob/master/plotly/pr6_17.png)
+  ![](https://github.com/murattumov/project6/blob/master/plotly/pr6_17.png)
   6. составляем профили кластеров. использование полярной диаграммы.
-  ![](https://github.com/murattumov/project1/blob/master/plotly/pr6_18.png)
+  ![](https://github.com/murattumov/project6/blob/master/plotly/pr6_18.png)
 
 - RFM-сегментация клиентов. Часть III
 Построение модели кластеризации для части клиентов, которые не попали в обучающую выборку. Обучим модель классификации, которая на основе RFM-характеристик будет предсказывать клиентский сегмент.
@@ -143,4 +143,4 @@ param_grid = {
 ****
 
 
-:arrow_up:[к оглавлению](https://github.com/murattumov/project1/blob/master/README.md#Оглавление)
+:arrow_up:[к оглавлению](https://github.com/murattumov/project6/blob/master/README.md#Оглавление)
